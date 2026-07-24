@@ -106,20 +106,27 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 ┌─────────────────────────────────────────────────────────────┐
 │ QUICK PROBLEM CARD #1                                    │
 │                                                             │
-│ Bài toán (1 câu): Tự động phân loại khiếu nại của cư dân và chuyển đến đúng bộ phận xử lý.
+│ Bài toán (1 câu): Tự động phân loại khiếu nại của 
+cư dân và chuyển đến đúng bộ phận xử lý.
   │
 │ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [x] Vinhomes  │
 │                     [ ] Vinmec   [ ] Khác (Ghi rõ)________  │
 │                                                             │
-│ Ai đang đau (Actor)? Cư dân, Nhân viên CSKH, Ban quản lý tòa nhà______________________________________ │
+│ Ai đang đau (Actor)? Cư dân, Nhân viên CSKH,
+ Ban quản lý tòa nhà______________________________________ │
 │                                                             │
 │ Workflow thủ công hiện tại (3-5 bước):                      │
-│   1. Cư dân gửi phản ánh qua ứng dụng Vinhomes Resident___ ──> 2. Nhân viên CSKH đọc nội dung phản ánh___ ──> 3. Xác định loại sự cố và bộ phận phụ trách ___ ──> 4.Chuyển ticket đến bộ phận liên quan. ___                   │
+│   1. Cư dân gửi phản ánh qua ứng dụng Vinhomes Resident___
+ ──> 2. Nhân viên CSKH đọc nội dung phản ánh___ ──> 3. Xác
+  định loại sự cố và bộ phận phụ trách ___ ──> 4.Chuyển 
+  ticket đến bộ phận liên quan. ___                   │
 │                                                             │
 │ Bước nào tốn thời gian/lỗi nhất? Bước 2-3___ (⏱ _6__ phút/lượt)      │
-│ AI có thể nhảy vào hỗ trợ ở bước nào? _Đọc nội dung phản ánh, phân loại tự động và gợi ý bộ phận xử lý____________________ │
+│ AI có thể nhảy vào hỗ trợ ở bước nào? _Đọc nội dung phản 
+ánh, phân loại tự động và gợi ý bộ phận xử lý____________________ │
 │                                                             │
-│ Đo thành công bằng gì (Metric có số)? _Giảm thời gian phân loại từ 6 phút xuống dưới 1 phút_____________________ │
+│ Đo thành công bằng gì (Metric có số)? _Giảm thời gian phân
+ loại từ 6 phút xuống dưới 1 phút_____________________ │
 │   VD: "Giảm thời gian soạn phản hồi từ 10 min ──> under 2 min"│
 │                                                             │
 │ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
