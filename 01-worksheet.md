@@ -63,11 +63,11 @@ Hãy sử dụng **4 Lenses** dưới đây để quét qua hoạt động vận
 ### 📝 List bài toán của tôi:
 | # | Subsidiary (VinFast/Xanh SM...) | Lens | Mô tả ngắn bài toán |
 |---|----------------------------------|------|---------------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
+| 1 | Vinhomes|Lặp lại |Phân loại khiếu nại cư dân và chuyển đến đúng bộ phận xử lý. |
+| 2 | VinFast|Tốn thời gian |Tổng hợp phản hồi bảo hành từ nhiều đại lý để tạo báo cáo lỗi. |
+| 3 | Vinpearl |AI-upgrade |Phân tích review khách sạn để phát hiện vấn đề dịch vụ. |
+| 4 | Vinmec |Tốn thời gian |Soạn tóm tắt hồ sơ xuất viện từ bệnh án điện tử. |
+| 5 | Xanh SM |Pain từ người khác |Phân tích nguyên nhân khách hủy chuyến từ ghi âm cuộc gọi. |
 
 ---
 
@@ -102,6 +102,71 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 > **🤖 AI Prompts — Stress-Test thẻ bài toán:**
 > Hãy dán nội dung thẻ bài toán của bạn vào LLM để nhận phản biện:
 > *"Đây là một thẻ bài toán vận hành tôi đề xuất cho Vin Smart Future: [Dán nội dung]. Hãy đóng vai trò là một CFO và Trưởng phòng Vận hành cực kỳ khắt khe, chỉ ra cho tôi 3 điểm yếu về logic, metric, và giải thích vì sao rule-based code thông thường có thể giải quyết bài toán này tốt hơn là dùng AI."*
+
+┌─────────────────────────────────────────────────────────────┐
+│ QUICK PROBLEM CARD #1                                    │
+│                                                             │
+│ Bài toán (1 câu): Tự động phân loại khiếu nại của cư dân và chuyển đến đúng bộ phận xử lý.
+  │
+│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [x] Vinhomes  │
+│                     [ ] Vinmec   [ ] Khác (Ghi rõ)________  │
+│                                                             │
+│ Ai đang đau (Actor)? Cư dân, Nhân viên CSKH, Ban quản lý tòa nhà______________________________________ │
+│                                                             │
+│ Workflow thủ công hiện tại (3-5 bước):                      │
+│   1. Cư dân gửi phản ánh qua ứng dụng Vinhomes Resident___ ──> 2. Nhân viên CSKH đọc nội dung phản ánh___ ──> 3. Xác định loại sự cố và bộ phận phụ trách ___ ──> 4.Chuyển ticket đến bộ phận liên quan. ___                   │
+│                                                             │
+│ Bước nào tốn thời gian/lỗi nhất? Bước 2-3___ (⏱ _6__ phút/lượt)      │
+│ AI có thể nhảy vào hỗ trợ ở bước nào? _Đọc nội dung phản ánh, phân loại tự động và gợi ý bộ phận xử lý____________________ │
+│                                                             │
+│ Đo thành công bằng gì (Metric có số)? _Giảm thời gian phân loại từ 6 phút xuống dưới 1 phút_____________________ │
+│   VD: "Giảm thời gian soạn phản hồi từ 10 min ──> under 2 min"│
+│                                                             │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+└─────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────┐
+│ QUICK PROBLEM CARD #2                                     │
+│                                                             │
+│ Bài toán (1 câu): Tự động tổng hợp phản hồi bảo hành từ nhiều đại lý để tạo báo cáo lỗi phổ biến________________________________________  │
+│ Công ty thành viên: [x] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+│                     [ ] Vinmec   [ ] Khác (Ghi rõ)________  │
+│                                                             │
+│ Ai đang đau (Actor)? Nhân viên bảo hành,Kỹ sư chất lượng,Quản lý dịch vụ______________________________________ │
+│                                                             │
+│ Workflow thủ công hiện tại (3-5 bước):                      │
+│   1. Thu thập phản hồi từ các đại lý___ ──> 2. Đọc từng báo cáo___ ──> 3.Phân nhóm các lỗi giống nhau ___ ──> 4. Viết báo cáo tổng hợp___                   │
+│                                                             │
+│ Bước nào tốn thời gian/lỗi nhất? _2-4__ (⏱ _20__ phút/lượt)      │
+│ AI có thể nhảy vào hỗ trợ ở bước nào? Tự động đọc, tóm tắt và phân nhóm các lỗi giống nhau_____________________ │
+│                                                             │
+│ Đo thành công bằng gì (Metric có số)? _Giảm thời gian tạo báo cáo từ 20 phút xuống còn dưới 5 phút_____________________ │
+│   VD: "Giảm thời gian soạn phản hồi từ 10 min ──> under 2 min"│
+│                                                             │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ QUICK PROBLEM CARD #3                                     │
+│                                                             │
+│ Bài toán (1 câu): _Phân tích đánh giá khách hàng để phát hiện các vấn đề dịch vụ nổi bật_______________________________________  │
+│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+│                     [ ] Vinmec   [x] Khác (Ghi rõ)_Vinpearl_______  │
+│                                                             │
+│ Ai đang đau (Actor)? Quản lý khách sạn, Bộ phận chăm sóc khách hàng______________________________________ │
+│                                                             │
+│ Workflow thủ công hiện tại (3-5 bước):                      │
+│   1. Thu thập review từ Booking, Agoda và Google___ ──> 2. Nhân viên đọc từng đánh giá___ ──> 3. Phân loại theo từng chủ đề___ ──> 4. Tổng hợp các vấn đề nổi bật___                   │
+│                                                             │
+│ Bước nào tốn thời gian/lỗi nhất? _2-4__ (⏱ __15_ phút/lượt)      │
+│ AI có thể nhảy vào hỗ trợ ở bước nào? Phân tích cảm xúc, phân loại chủ đề và tóm tắt các vấn đề nổi bật_____________________ │
+│                                                             │
+│ Đo thành công bằng gì (Metric có số)? Giảm thời gian tổng hợp từ 15 phút xuống dưới 3 phút______________________ │
+│   VD: "Giảm thời gian soạn phản hồi từ 10 min ──> under 2 min"│
+│                                                             │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+└─────────────────────────────────────────────────────────────┘
 
 ---
 
