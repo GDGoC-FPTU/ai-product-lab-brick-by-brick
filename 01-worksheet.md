@@ -69,6 +69,7 @@ Hãy sử dụng **4 Lenses** dưới đây để quét qua hoạt động vận
 | 4 | **VinFast** | Lặp lại | Nhân viên kế toán hoàn thiện các đơn yêu cầu đăng ký thuê pin của các chủ xe 2 bánh theo các gói có sẵn |
 | 5 | **Vinhomes** | Pain từ người khác | Cư dân bị mất, quên thẻ chung cư và không có cách nào lên, phải gọi BQL thủ công. |
 
+
 ---
 
 # 🃏 Phase 2 — QUICK-ASSESS (Cá nhân, 30 min)
@@ -77,44 +78,11 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #___                                     │
-│                                                             │
-│ Bài toán (1 câu): ________________________________________  │
-│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
-│                     [ ] Vinmec   [ ] Khác (Ghi rõ)________  │
-│                                                             │
-│ Ai đang đau (Actor)? ______________________________________ │
-│                                                             │
-│ Workflow thủ công hiện tại (3-5 bước):                      │
-│   1. ___ ──> 2. ___ ──> 3. ___ ──> 4. ___                   │
-│                                                             │
-│ Bước nào tốn thời gian/lỗi nhất? ___ (⏱ ___ phút/lượt)      │
-│ AI có thể nhảy vào hỗ trợ ở bước nào? _____________________ │
-│                                                             │
-│ Đo thành công bằng gì (Metric có số)? ______________________ │
-│   VD: "Giảm thời gian soạn phản hồi từ 10 min ──> under 2 min"│
-│                                                             │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [ ] LLM  [ ] Agent │
-└─────────────────────────────────────────────────────────────┘
-```
-
-> [!TIP]
-> **🤖 AI Prompts — Stress-Test thẻ bài toán:**
-> Hãy dán nội dung thẻ bài toán của bạn vào LLM để nhận phản biện:
-> *"Đây là một thẻ bài toán vận hành tôi đề xuất cho Vin Smart Future: [Dán nội dung]. Hãy đóng vai trò là một CFO và Trưởng phòng Vận hành cực kỳ khắt khe, chỉ ra cho tôi 3 điểm yếu về logic, metric, và giải thích vì sao rule-based code thông thường có thể giải quyết bài toán này tốt hơn là dùng AI."*
-
-## 3 Quick Problem Cards đã hoàn thiện:
-
-**Top 3 lựa chọn: #2 (Xanh SM — FAQ trạm thay pin), #4 (VinFast — đăng ký thuê pin), #5 (Vinhomes — mất thẻ chung cư)**
-
-```
-┌─────────────────────────────────────────────────────────────┐
 │ QUICK PROBLEM CARD #1 — từ bài toán #2                      │
 │                                                             │
 │ Bài toán: Điều phối viên Xanh SM phải thủ công trả lời      │
 │ các thắc mắc lặp lại của tài xế xe 2 bánh về trạm thay pin. │
-│ Công ty thành viên: [ ] VinFast  [x] Xanh SM  [ ] Vinhomes  │
-│                     [ ] Vinmec   [ ] Khác                   │
+│ Công ty thành viên: [x] Xanh SM                 │
 │                                                             │
 │ Ai đang đau (Actor)?                                        │
 │   Điều phối viên (bị gián đoạn liên tục), tài xế xe 2 bánh  │
@@ -136,7 +104,7 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 │   xuống < 5 lượt/ngày. Thời gian tài xế nhận thông tin      │
 │   từ 6 phút ──> dưới 30 giây.                               │
 │                                                             │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+│ Quick Architecture: [x] LLM │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -146,8 +114,7 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 │                                                             │
 │ Bài toán: Nhân viên kế toán VinFast hoàn thiện thủ công     │
 │ đơn đăng ký thuê pin xe 2 bánh theo các gói có sẵn.         │
-│ Công ty thành viên: [x] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
-│                     [ ] Vinmec   [ ] Khác                   │
+│ Công ty thành viên: [x] VinFast              │
 │                                                             │
 │ Ai đang đau (Actor)?                                        │
 │   Nhân viên kế toán (nhập liệu lặp lại), khách mua xe 2     │
@@ -169,7 +136,7 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 │   Giảm thời gian xử lý mỗi đơn từ 15 phút ──> dưới 3 phút. │
 │   Giảm tỉ lệ nhập sai thông tin hợp đồng từ ~5% ──> < 1%.  │
 │                                                             │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+│ Quick Architecture:  [x] LLM  
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -179,8 +146,7 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 │                                                             │
 │ Bài toán: Cư dân Vinhomes mất/quên thẻ chung cư không thể   │
 │ vào tòa nhà, phải gọi BQL thủ công để được hỗ trợ.          │
-│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [x] Vinhomes  │
-│                     [ ] Vinmec   [ ] Khác                   │
+│ Công ty thành viên:[x] Vinhomes                 │
 │                                                             │
 │ Ai đang đau (Actor)?                                        │
 │   Cư dân bị kẹt ngoài cửa (frustration cao, kể cả 23h),     │
@@ -204,9 +170,13 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 │   Thời gian cư dân được vào tòa nhà tạm từ 10 phút          │
 │   ──> dưới 2 phút (self-service qua App).                   │
 │                                                             │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [ ] LLM  [x] Agent │
+│ Quick Architecture:   [x] Agent 
 └─────────────────────────────────────────────────────────────┘
 ```
+> [!TIP]
+> **🤖 AI Prompts — Stress-Test thẻ bài toán:**
+> Hãy dán nội dung thẻ bài toán của bạn vào LLM để nhận phản biện:
+> *"Đây là một thẻ bài toán vận hành tôi đề xuất cho Vin Smart Future: [Dán nội dung]. Hãy đóng vai trò là một CFO và Trưởng phòng Vận hành cực kỳ khắt khe, chỉ ra cho tôi 3 điểm yếu về logic, metric, và giải thích vì sao rule-based code thông thường có thể giải quyết bài toán này tốt hơn là dùng AI."*
 
 ---
 
